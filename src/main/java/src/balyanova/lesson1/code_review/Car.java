@@ -1,6 +1,6 @@
 package src.balyanova.lesson1.code_review;
 
-abstract class Car {
+abstract class Car implements Engine {
     private Engine engine;//нужен приватный модификатор, особенно при наличии геттеров и сеттеров
     private String color;
     private String name;
