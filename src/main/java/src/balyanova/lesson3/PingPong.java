@@ -2,7 +2,6 @@ package src.balyanova.lesson3;
 
 import java.util.Objects;
 
-@SuppressWarnings("InfiniteLoopStatement")//иначе IDE пишет предупреждение о 'while' statement cannot complete without throwing an exception
 public class PingPong {
     private final Object monitor = new Object();
     private String current = "Ping";
@@ -10,12 +9,10 @@ public class PingPong {
     public static void main(String[] args) {
         PingPong pingPong = new PingPong();
         //while (true) {//в задании не сказано как долго программа пишет Ping - Pong
-        for (int i = 0; i < 20; i++) {
 
             new Thread(pingPong::ping).start();
 
             new Thread(pingPong::pong).start();
-        }
     }
 
     public void ping() {
